@@ -1,0 +1,134 @@
+<div
+  class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center backdrop-blur-sm transition-opacity duration-500 animate-fade-in"
+  (click)="closed.emit()"
+>
+  <div
+    class="relative w-[90vw] max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[var(--color-bg)] dark:bg-[var(--color-bg-secondary)] shadow-2xl border border-[var(--color-border)] animate-slide-in-panel"
+    (click)="$event.stopPropagation()"
+    [attr.dir]="dir"
+  >
+    <!-- Close Button -->
+    <button
+      type="button"
+      (click)="closed.emit()"
+      class="absolute top-4 ltr:right-4 rtl:left-4 text-xl text-[var(--color-primary)] hover:text-white hover:bg-[var(--color-primary)] rounded-full w-10 h-10 flex items-center justify-center transition duration-300 ease-in-out shadow-md"
+      aria-label="Close"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <!-- Image Header -->
+    <div class="w-full h-64 md:h-80 bg-black rounded-t-3xl overflow-hidden">
+      <img
+        [src]="project.image"
+        [alt]="project.titleKey | translate"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Content -->
+    <div class="p-6 md:p-10 space-y-6">
+      <h2 class="text-3xl font-extrabold text-[var(--color-primary)]">
+        {{ project.titleKey | translate }}
+      </h2>
+
+      <p class="text-[var(--color-text-secondary)] leading-relaxed text-base">
+        {{ project.descriptionKey | translate }}
+      </p>
+
+      <!-- Basic Info -->
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-[var(--color-text-secondary)]"
+      >
+        <div>
+          <span class="font-bold text-[var(--color-text-main)]">
+            {{ "Type" | translate }}
+          </span>
+          {{ project.typeKey | translate }}
+        </div>
+        <div>
+          <span class="font-bold text-[var(--color-text-main)]">
+            {{ "Duration" | translate }}
+          </span>
+          {{ project.durationKey | translate }}
+        </div>
+        <div>
+          <span class="font-bold text-[var(--color-text-main)]">
+            {{ "Budget" | translate }}
+          </span>
+          {{ project.budgetKey | translate }}
+        </div>
+        <div>
+          <span class="font-bold text-[var(--color-text-main)]">
+            {{ "Location" | translate }}
+          </span>
+          {{ project.locationKey | translate }}
+        </div>
+      </div>
+
+      <!-- Challenge & Solution -->
+      <div class="space-y-4">
+        <div>
+          <h3 class="text-lg font-bold text-[var(--color-primary)]">
+            <i class="fas fa-puzzle-piece"></i>
+            {{ "Challenge" | translate }}
+          </h3>
+          <p class="text-[var(--color-text-secondary)]">
+            {{ project.challengeKey | translate }}
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-[var(--color-primary)]">
+            {{ "Solution" | translate }}
+          </h3>
+          <p class="text-[var(--color-text-secondary)]">
+            {{ project.solutionKey | translate }}
+          </p>
+        </div>
+
+        @if (project.clientFeedbackKey) {
+        <div>
+          <h3 class="text-lg font-bold text-[var(--color-primary)]">
+            {{ "Client Feedback" | translate }}
+          </h3>
+          <p class="italic text-[var(--color-text-secondary)]">
+            “{{ project.clientFeedbackKey | translate }}”
+          </p>
+        </div>
+        }
+      </div>
+
+      <!-- Technologies -->
+      @if ((project.technologiesKey | translate)?.length) {
+      <div>
+        <h3 class="text-lg font-bold text-[var(--color-primary)] mb-2">
+          {{ "Technologies" | translate }}
+        </h3>
+        <div class="flex overflow-x-auto gap-2 py-2">
+          @for (tech of project.technologiesKey | translate; track tech) {
+          <span
+            class="whitespace-nowrap px-3 py-1 bg-[var(--color-bg-section)] dark:bg-[var(--color-bg)] rounded-full text-sm border border-[var(--color-border)]"
+          >
+            {{ tech }}
+          </span>
+          }
+        </div>
+      </div>
+      }
+
+      <!-- Info Link -->
+      <div class="pt-6">
+        <button
+          type="button"
+          (click)="showInfo()"
+          class="group inline-flex items-center gap-2 text-sm font-medium text-[var(--color-primary)] hover:text-white hover:bg-[var(--color-primary)] px-4 py-2 rounded-full transition-all duration-300 border border-[var(--color-primary)] shadow-sm"
+        >
+          <span>{{ "View Project Online" | translate }}</span>
+          <i
+            class="fas fa-arrow-up-right-from-square transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+          ></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

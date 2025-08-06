@@ -1,0 +1,128 @@
+/* ✅ القواعد العامة المشتركة */
+:where(.navbar-default, .mobile-menu-default) {
+  background-color: rgba(0, 81, 210, 0.8);
+  color: white;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  padding: 1rem 0;
+  transition: background-color 0.3s ease, padding 0.3s ease, color 0.3s ease;
+}
+
+:where(.navbar-scrolled, .mobile-menu-scrolled) {
+  background-color: white;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 0.5rem 0;
+}
+
+/* ✅ روابط التنقل */
+:where(
+    .navbar-default,
+    .mobile-menu-default,
+    .navbar-scrolled,
+    .mobile-menu-scrolled
+  )
+  a {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+:where(.navbar-default, .mobile-menu-default) a {
+  color: white;
+}
+:where(.navbar-default, .mobile-menu-default) a:hover {
+  color: #f3f4f6;
+}
+
+:where(.navbar-scrolled, .mobile-menu-scrolled) a {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+:where(.navbar-scrolled, .mobile-menu-scrolled) a:hover {
+  color: var(--color-hover);
+}
+
+/* ✅ Underline Animation */
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ✅ Active Link */
+.active-link {
+  font-weight: 600;
+}
+:where(.navbar-default, .mobile-menu-default) .active-link {
+  color: white;
+}
+:where(.navbar-default, .mobile-menu-default) .active-link::after {
+  background-color: white;
+  transform: scaleX(1);
+}
+:where(.navbar-scrolled, .mobile-menu-scrolled) .active-link {
+  color: var(--color-primary);
+}
+:where(.navbar-scrolled, .mobile-menu-scrolled) .active-link::after {
+  background-color: var(--color-primary);
+  transform: scaleX(1);
+}
+
+/* ✅ شعار الشركة */
+.logo-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: start;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: color 0.3s ease;
+}
+.navbar-default .logo-name {
+  color: white;
+}
+.navbar-scrolled .logo-name {
+  color: var(--color-primary);
+}
+
+/* ✅ الوضع الداكن */
+.dark :where(.navbar-default, .mobile-menu-default) {
+  color: white;
+}
+.dark :where(.navbar-default, .mobile-menu-default) a {
+  color: white;
+}
+.dark :where(.navbar-default, .mobile-menu-default) a:hover {
+  color: #f3f4f6;
+}
+
+.dark :where(.navbar-scrolled, .mobile-menu-scrolled) a {
+  color: var(--color-primary);
+}
+.dark :where(.navbar-scrolled, .mobile-menu-scrolled) a:hover {
+  color: var(--color-hover);
+}
+
+.dark :where(.navbar-default, .mobile-menu-default) .active-link::after {
+  background-color: white;
+}
+.dark :where(.navbar-scrolled, .mobile-menu-scrolled) .active-link::after {
+  background-color: var(--color-primary);
+}
+
+.dark .navbar-default .logo-name {
+  color: white;
+}
+.dark .navbar-scrolled .logo-name {
+  color: var(--color-primary);
+}

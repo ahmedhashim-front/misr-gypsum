@@ -1,0 +1,29 @@
+@keyframes slideInPanel {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInPanelRTL {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.ltr .animate-slide-in-panel {
+  animation: slideInPanel 0.4s ease-out forwards;
+}
+
+.rtl .animate-slide-in-panel {
+  animation: slideInPanelRTL 0.4s ease-out forwards;
+}

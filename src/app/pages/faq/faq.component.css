@@ -1,0 +1,56 @@
+details[open] summary {
+  margin-bottom: 0.5rem;
+}
+
+/* إلغاء العلامة الافتراضية */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* تدرج لوني اختياري - غير مستخدم حاليًا */
+.text-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  -webkit-text-fill-color: transparent;
+}
+
+/* لون البوردر في الوضعين */
+:root {
+  --color-border: rgba(0, 0, 0, 0.05);
+}
+.dark {
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+/* أنيميشن الدخول من الأسفل */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease both;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq-toggle-btn {
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  background-size: 200% auto;
+  transition: all 0.3s ease;
+}
+
+.faq-toggle-btn:hover {
+  background-position: right center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 0 10px var(--color-accent);
+}

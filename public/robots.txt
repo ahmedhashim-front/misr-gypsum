@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://misrgypsum.vercel.app/sitemap.xml

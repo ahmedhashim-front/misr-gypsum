@@ -1,0 +1,94 @@
+/* === 1. Animation Delays – خاصة بالهوم أو قابلة لإعادة الاستخدام === */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* === 2. Animations – عامة وقابلة لإعادة الاستخدام === */
+
+/* Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* Slide In (من اليمين) */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-slide-in {
+  animation: slideIn 0.7s ease-in-out forwards;
+}
+
+/* === 3. Pulse Ping (نبضة متكررة) – مفيدة للنقط أو الأزرار التفاعلية === */
+@keyframes pulsePing {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+}
+.pulse-dot {
+  position: relative;
+}
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
+  animation: pulsePing 1.5s infinite;
+  z-index: -1;
+}
+
+/* === 4. Text Shadow – ظل بسيط لتمييز النصوص خصوصًا على صور الخلفية === */
+.text-shadow {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* === 5. Underline Hover Animation – غالبًا للعناوين أو الروابط === */
+.animated-underline {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
+}
+.section-title:hover .animated-underline {
+  transform: scaleX(1.2);
+}
+
+/* === 6. Slow Spin Animation – دوران ناعم للعناصر الزخرفية أو الشعارات === */
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}

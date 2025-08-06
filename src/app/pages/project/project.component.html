@@ -1,0 +1,185 @@
+
+<!-- 🔹 Hero Video Section -->
+<div class="relative w-full h-[100vh] overflow-hidden">
+  <video
+    #videoPlayer
+    [src]="videos[currentVideoIndex]"
+    (loadeddata)="handleLoaded()"
+    autoplay
+    muted
+    playsinline
+    loop
+    [class.opacity-0]="!videoReady"
+    [class.opacity-100]="videoReady"
+    class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 bg-black"
+  ></video>
+
+  <div
+    class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4"
+  >
+    <h1 class="text-4xl sm:text-6xl font-bold mb-4 animate-fade-in">
+      {{ "PROJECT.HERO.TITLE" | translate }}
+    </h1>
+    <p class="text-lg sm:text-xl mb-6 max-w-2xl animate-fade-in delay-300">
+      {{ "PROJECT.HERO.DESCRIPTION" | translate }}
+    </p>
+    <a
+      routerLink="/productdetailes"
+      class="inline-block bg-[var(--color-primary)] hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-xl shadow-md transition duration-300 dark:hover:text-black"
+    >
+      {{ "PROJECT.HERO.BUTTON" | translate }}
+    </a>
+  </div>
+</div>
+
+<!-- 🔹 Projects Section -->
+<section
+  id="project-categories"
+  class="relative py-20 px-6 bg-gradient-to-tr from-[var(--color-bg-section)] to-white dark:to-[var(--color-bg-secondary)] overflow-hidden rounded-[3rem] shadow-[0_20px_60px_-10px_rgba(0,81,210,0.25)] border border-[var(--color-border)]"
+  [animateOnView]="'animate-fade-in-up'"
+>
+  <!-- 🔸 Decorations -->
+  <div
+    class="absolute top-0 left-0 w-40 h-40 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-pulse"
+  ></div>
+  <div
+    class="absolute bottom-0 right-0 w-56 h-56 bg-[var(--color-primary-hover)] opacity-10 rounded-full blur-3xl animate-pulse delay-300"
+  ></div>
+
+  <!-- 🔸 Section Title -->
+  <div class="relative z-10 container mx-auto text-center mb-10">
+    <h2
+      class="text-4xl sm:text-5xl font-extrabold text-[var(--color-primary)] tracking-tight animate-slide-in"
+    >
+      {{ "PRODUCT.SECTION_TITLE" | translate }}
+    </h2>
+    <p class="mt-4 text-lg text-[var(--color-text-secondary)] max-w-xl mx-auto">
+      {{ "PRODUCT.SECTION_SUBTITLE" | translate }}
+    </p>
+  </div>
+
+  <!-- 🔸 Categories -->
+  <div
+    class="relative z-10 flex flex-wrap justify-center gap-4 bg-white/60 dark:bg-[var(--color-bg)] backdrop-blur-xl p-6 rounded-3xl border border-[var(--color-border)] shadow-lg"
+  >
+    @for (category of categories; track category) {
+    <button
+      type="button"
+      [animateOnView]="'animate-fade-in-up'"
+      (click)="selectedCategory.set(category)"
+      class="px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_8px_30px_-5px_var(--color-primary)]"
+      [class]="{
+        'bg-gradient-to-tr from-[var(--color-primary)] to-blue-600 text-white shadow-xl':
+          selectedCategory() === category,
+        'bg-white dark:bg-[var(--color-bg-secondary)] text-[var(--color-primary)] border border-[var(--color-primary)]':
+          selectedCategory() !== category
+      }"
+    >
+      {{ "PRODUCT.CATEGORY." + category | translate }}
+    </button>
+    }
+  </div>
+
+  <!-- 🔸 Projects Grid -->
+  <div
+    class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
+    [animateOnView]="'animate-fade-in-up'"
+  >
+    @for (project of filteredProjects; track project.id; ) {
+    <div
+      class="bg-[var(--color-bg)] dark:bg-[var(--color-bg-secondary)] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl cursor-pointer animate-fade-in-up"
+      (click)="selectedProject.set(project)"
+      role="button"
+      tabindex="0"
+    >
+      <img
+        loading="lazy"
+        [src]="project.image"
+        [alt]="project.titleKey | translate"
+        class="w-full h-48 object-cover"
+      />
+      <div class="p-5 text-start">
+        <h3 class="text-lg font-bold mb-2 text-[var(--color-primary)]">
+          {{ project.titleKey | translate }}
+        </h3>
+        <p class="text-sm text-[var(--color-text-secondary)]">
+          {{ project.descriptionKey | translate }}
+        </p>
+      </div>
+    </div>
+    }
+  </div>
+
+  <!-- 🔸 Project Details Modal -->
+  @if (selectedProject()) {
+  <app-projectdetailes
+    [project]="selectedProject()"
+    (closed)="closeDetails()"
+  />
+  }
+</section>
+
+<!-- 🔹 Why Choose Us Section -->
+
+<section
+  id="PROJECTSPAGes-how-it-works"
+  class="relative py-28 px-6 bg-gradient-to-tr from-[var(--color-bg-section)] to-white dark:to-[var(--color-bg-secondary)] overflow-hidden"
+  [animateOnView]="'animate-fade-in-up'"
+>
+  <div class="container mx-auto max-w-7xl">
+    <!-- 🔸 Section Title -->
+    <div class="text-center mb-20">
+      <h2
+        class="text-4xl sm:text-5xl font-extrabold text-[var(--color-primary)] mb-4"
+      >
+        {{ "PROJECTSPAGes.HOW_IT_WORKS.TITLE" | translate }}
+      </h2>
+      <p class="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+        {{ "PROJECTSPAGes.HOW_IT_WORKS.SUBTITLE" | translate }}
+      </p>
+    </div>
+
+    <!-- 🔸 Features Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      @for (step of processSteps; track step.id) {
+      <div
+        class="group bg-white dark:bg-[var(--color-bg)] p-8 rounded-3xl border border-[var(--color-border)] shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] hover:shadow-[0_16px_60px_-10px_var(--color-primary)] transition duration-500 hover:-translate-y-2"
+      >
+        <!-- Icon / Number -->
+        <div
+          class="mb-6 w-14 h-14 flex items-center justify-center rounded-full bg-[var(--color-primary)] text-white text-xl font-bold mx-auto group-hover:rotate-[360deg] transition-transform duration-500"
+        >
+          {{ step.id }}
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-xl font-semibold text-[var(--color-primary)] mb-3 text-center"
+        >
+          {{
+            "PROJECTSPAGes.HOW_IT_WORKS.STEP" + step.id + ".TITLE" | translate
+          }}
+        </h3>
+
+        <!-- Description -->
+        <p
+          class="text-sm text-[var(--color-text-secondary)] text-center leading-relaxed"
+        >
+          {{
+            "PROJECTSPAGes.HOW_IT_WORKS.STEP" + step.id + ".DESCRIPTION"
+              | translate
+          }}
+        </p>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-- 🔹 Decorative Blur Elements -->
+  <div
+    class="absolute -top-10 left-0 w-40 h-40 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-pulse"
+  ></div>
+  <div
+    class="absolute bottom-0 -right-10 w-56 h-56 bg-[var(--color-primary-hover)] opacity-10 rounded-full blur-3xl animate-pulse delay-300"
+  ></div>
+</section>

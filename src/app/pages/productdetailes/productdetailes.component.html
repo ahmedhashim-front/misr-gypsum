@@ -1,0 +1,285 @@
+<section
+  id="products-page"
+  class="relative py-28 px-6 bg-[var(--color-bg-section)] dark:bg-[var(--color-bg-secondary)] text-center overflow-hidden"
+  [animateOnView]="'animate-fade-in-up'"
+>
+  <div class="container mx-auto max-w-7xl">
+    <!-- 🔹 Title & Subtitle -->
+    <div class="mb-16">
+      <h1
+        class="text-4xl sm:text-5xl font-extrabold text-[var(--color-primary)] mb-4"
+      >
+        {{ "PRODUCTS_PAGE.TITLE" | translate }}
+      </h1>
+      <p class="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+        {{ "PRODUCTS_PAGE.SUBTITLE" | translate }}
+      </p>
+    </div>
+
+    <!-- 🔹 Filter Buttons -->
+    <div
+      class="flex flex-wrap justify-center gap-3 mb-14"
+      [animateOnView]="'animate-fade-in-up'"
+    >
+      @for (filter of productFilters; track filter.value) {
+      <button
+        (click)="setActiveFilter(filter.value)"
+        class="px-5 py-2 text-sm font-medium rounded-full border transition-all duration-300 text-[var(--color-primary)] border-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white dark:hover:text-black"
+        [class]="{
+          'bg-[var(--color-primary)] text-white dark:text-black':
+            activeFilter === filter.value
+        }"
+      >
+        @if (activeFilter === filter.value) {
+        <span class="mr-1">✔️</span>
+        }
+        {{ filter.label | translate }}
+      </button>
+      }
+    </div>
+
+    <!-- 🔹 Product Cards Grid -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+      [animateOnView]="'animate-fade-in-up'"
+    >
+      @for (product of filteredProducts; track product.id; let i = $index) {
+      <div
+        class="group relative p-6 rounded-[2rem] border border-[var(--color-border)] bg-gradient-to-br from-white to-gray-50 dark:from-[var(--color-bg)] dark:to-[var(--color-bg-section)] shadow-[0_20px_50px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_25px_60px_-5px_var(--color-primary)] transition-all duration-500 hover:-translate-y-2"
+        [style.animationDelay]="i * 100 + 'ms'"
+      >
+        <!-- شارة "جديد" -->
+        @if (i === 0) {
+        <span
+          class="absolute top-4 left-4 bg-[var(--color-primary)] text-white text-[10px] z-10 font-semibold px-3 py-1 rounded-full shadow"
+        >
+          جديد
+        </span>
+        }
+
+        <!-- صورة المنتج -->
+        <div
+          class="relative h-44 flex items-center justify-center mb-5 rounded-xl overflow-hidden bg-white dark:bg-[var(--color-bg)] shadow-inner"
+        >
+          <img
+            [src]="product.image"
+            [alt]="product.title"
+            class="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+
+        <!-- عنوان المنتج -->
+        <h3
+          class="text-lg font-extrabold text-[var(--color-primary)] mb-2 group-hover:text-[var(--color-primary-hover)] transition-colors duration-300"
+        >
+          {{ product.title | translate }}
+        </h3>
+
+        <!-- وصف المنتج -->
+        <p
+          class="text-sm text-[var(--color-text-secondary)] leading-relaxed min-h-[56px]"
+        >
+          {{ product.description | translate }}
+        </p>
+      </div>
+      }
+    </div>
+
+    <!-- 🔹 CTA Section -->
+    <div
+      [animateOnView]="'animate-fade-in-up'"
+      class="mt-20 bg-[var(--color-bg)] dark:bg-[var(--color-bg-section)] py-12 px-6 rounded-3xl shadow-lg text-center animate-fade-in-up"
+    >
+      <h2 class="text-2xl font-bold text-[var(--color-primary)] mb-4">
+        {{ "PRODUCTS_PAGE.CTA.TITLE" | translate }}
+      </h2>
+      <a
+        href="https://wa.me/201117484073"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block mt-4 px-6 py-3 bg-[var(--color-primary)] text-white font-semibold rounded-full shadow-md transition-all duration-300 hover:bg-[var(--color-primary-hover)] dark:hover:text-black"
+      >
+        {{ "PRODUCTS_PAGE.CTA.BUTTON" | translate }}
+      </a>
+    </div>
+  </div>
+
+  <!-- 🔹 Decorative Elements -->
+  <div
+    [animateOnView]="'animate-fade-in-up'"
+    class="absolute -top-10 -left-10 w-48 h-48 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-pulse"
+  ></div>
+  <div
+    class="absolute bottom-0 -right-10 w-60 h-60 bg-[var(--color-primary-hover)] opacity-10 rounded-full blur-3xl animate-pulse delay-300"
+  ></div>
+</section>
+
+<section
+  id="product-features"
+  class="py-28 px-6 bg-[var(--color-bg)] dark:bg-[var(--color-bg-section)] text-center relative overflow-hidden"
+  [animateOnView]="'animate-fade-in-up'"
+>
+  <div class="container mx-auto max-w-6xl">
+    <!-- 🔹 Section Title -->
+    <h2
+      class="text-3xl sm:text-4xl font-extrabold text-[var(--color-primary)] mb-12"
+    >
+      {{ "PRODUCTS_PAGE.FEATURES_TITLE" | translate }}
+    </h2>
+
+    <!-- 🔹 Features Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      @for (feature of features; track feature.id; let i = $index) {
+      <div
+        class="group p-6 rounded-2xl bg-white dark:bg-[var(--color-bg)] shadow-[0_5px_30px_-10px_rgba(0,81,210,0.15)] transition-all duration-300 hover:shadow-[0_10px_40px_-10px_var(--color-primary)] hover:-translate-y-1 cursor-pointer"
+        [style.animationDelay]="i * 100 + 'ms'"
+      >
+        <!-- Icon -->
+        <div
+          class="text-[var(--color-primary)] text-5xl mb-4 transition-transform duration-300 group-hover:text-[var(--color-primary-hover)] group-hover:scale-110"
+        >
+          <i [class]="'fa fa-' + feature.icon"></i>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg font-semibold text-[var(--color-text-main)] transition-colors duration-300 group-hover:text-[var(--color-primary-hover)]"
+        >
+          {{ feature.text | translate }}
+        </h3>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-- 🔹 Background Decor -->
+  <div
+    class="absolute -top-10 -left-10 w-48 h-48 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-pulse"
+  ></div>
+  <div
+    class="absolute bottom-0 -right-10 w-60 h-60 bg-[var(--color-primary-hover)] opacity-10 rounded-full blur-3xl animate-pulse delay-300"
+  ></div>
+</section>
+
+<section
+  id="certifications"
+  class="py-28 px-6 bg-[var(--color-bg-section)] dark:bg-[var(--color-bg-secondary)] text-center relative overflow-hidden"
+  [animateOnView]="'animate-fade-in-up'"
+>
+  <div class="container mx-auto max-w-6xl">
+    <!-- 🔹 Title -->
+    <h2
+      class="text-3xl sm:text-4xl font-extrabold text-[var(--color-primary)] mb-6"
+    >
+      {{ "PRODUCTS_PAGE.CERTIFICATIONS.TITLE" | translate }}
+    </h2>
+
+    <!-- 🔹 Subtitle -->
+    <p
+      class="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-16"
+    >
+      {{ "PRODUCTS_PAGE.CERTIFICATIONS.DESCRIPTION" | translate }}
+    </p>
+
+    <!-- 🔹 Logos Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <!-- ISO -->
+      <div
+        class="group bg-white dark:bg-[var(--color-bg)] p-8 rounded-2xl shadow-[0_10px_40px_-15px_rgba(0,81,210,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_50px_-12px_var(--color-primary)]"
+      >
+        <img
+          src="/img/42828.webp"
+          alt="ISO Certification"
+          class="mx-auto w-20 h-20 mb-5 transition-transform duration-300 group-hover:scale-110"
+        />
+        <p class="text-sm font-semibold text-[var(--color-text-main)]">
+          {{ "PRODUCTS_PAGE.CERTIFICATIONS.ISO" | translate }}
+        </p>
+      </div>
+
+      <!-- CE -->
+      <div
+        class="group bg-white dark:bg-[var(--color-bg)] p-8 rounded-2xl shadow-[0_10px_40px_-15px_rgba(0,81,210,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_50px_-12px_var(--color-primary)]"
+      >
+        <img
+          src="/img/27018.webp"
+          alt="CE Mark"
+          class="mx-auto w-20 h-20 mb-5 transition-transform duration-300 group-hover:scale-110"
+        />
+        <p class="text-sm font-semibold text-[var(--color-text-main)]">
+          {{ "PRODUCTS_PAGE.CERTIFICATIONS.CE" | translate }}
+        </p>
+      </div>
+
+      <!-- Quality -->
+      <div
+        class="group bg-white dark:bg-[var(--color-bg)] p-8 rounded-2xl shadow-[0_10px_40px_-15px_rgba(0,81,210,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_50px_-12px_var(--color-primary)]"
+      >
+        <img
+          src="/img/12393.webp"
+          alt="Quality Assurance"
+          class="mx-auto w-20 h-20 mb-5 transition-transform duration-300 group-hover:scale-110"
+        />
+        <p class="text-sm font-semibold text-[var(--color-text-main)]">
+          {{ "PRODUCTS_PAGE.CERTIFICATIONS.QUALITY" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Decorations -->
+  <div
+    class="absolute -top-10 -left-10 w-48 h-48 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-pulse"
+  ></div>
+  <div
+    class="absolute bottom-0 -right-10 w-60 h-60 bg-[var(--color-primary-hover)] opacity-10 rounded-full blur-3xl animate-pulse delay-300"
+  ></div>
+</section>
+
+<!-- 🔹 Product Stats Section -->
+
+<section
+  id="product-stats"
+  class="relative py-28 px-6 bg-[var(--color-bg)] dark:bg-[var(--color-bg-section)] text-center overflow-hidden"
+  [animateOnView]="'animate-fade-in-up'"
+>
+  <div class="container mx-auto max-w-7xl">
+    <!-- 🔹 العنوان -->
+
+    <!-- 🔹 الإحصائيات -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      @for (stat of productStats; track stat.id) {
+      <div
+        class="relative bg-white dark:bg-[var(--color-bg)] p-6 rounded-3xl shadow-[0_8px_30px_-10px_rgba(0,81,210,0.12)] hover:shadow-[0_12px_40px_-10px_var(--color-primary)] transition-all duration-300 hover:-translate-y-1 group"
+      >
+        <!-- الأيقونة -->
+        <div
+          class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-[var(--color-primary)/10] text-[var(--color-primary)] text-3xl group-hover:text-[var(--color-primary-hover)] transition-all duration-300"
+        >
+          <i [class]="'fas fa-' + stat.icon"></i>
+        </div>
+
+        <!-- القيمة -->
+        <h3
+          class="text-4xl font-extrabold text-[var(--color-text-main)] mb-1 transition-colors duration-300"
+        >
+          {{ stat.value }}
+        </h3>
+
+        <!-- التسمية -->
+        <p class="text-sm font-medium text-[var(--color-text-secondary)]">
+          {{ stat.label | translate }}
+        </p>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-- خلفيات ديكورية -->
+  <div
+    class="absolute -top-12 -left-12 w-52 h-52 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-pulse"
+  ></div>
+  <div
+    class="absolute bottom-0 -right-10 w-64 h-64 bg-[var(--color-primary-hover)] opacity-10 rounded-full blur-3xl animate-pulse delay-300"
+  ></div>
+</section>

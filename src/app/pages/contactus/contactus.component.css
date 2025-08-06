@@ -1,0 +1,27 @@
+/* داخل styles.css أو component-specific CSS */
+.custom-toast {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  max-width: 90%;
+  margin: 2rem auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideInUp 0.5s ease-out;
+}

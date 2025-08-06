@@ -1,0 +1,212 @@
+<script>
+  function handleSubmit(e) {
+    const form = e.target;
+    const toast = document.getElementById("contact-toast");
+
+    setTimeout(() => {
+      toast.classList.remove("hidden");
+      form.reset();
+    }, 600);
+
+    setTimeout(() => {
+      toast.classList.add("hidden");
+    }, 4500);
+
+    return true;
+  }
+</script>
+
+<section
+  id="contact-us"
+  class="relative py-32 px-6 bg-[var(--color-bg-section)] dark:bg-[var(--color-bg-secondary)] text-center overflow-hidden animate-fade-in"
+>
+  <!-- ديكور خلفي -->
+  <div
+    class="absolute -top-10 -left-10 w-48 h-48 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-pulse"
+  ></div>
+
+  <div class="container mx-auto max-w-5xl grid gap-20">
+    <!-- ✅ العنوان -->
+    <div class="mb-8" [animateOnView]="'animate-fade-in-up'">
+      <h2
+        class="text-4xl sm:text-5xl font-extrabold text-[var(--color-primary)] mb-4"
+      >
+        {{ "CONTACT_PAGE.TITLE" | translate }}
+      </h2>
+      <p class="text-lg text-[var(--color-text-secondary)]">
+        {{ "CONTACT_PAGE.SUBTITLE" | translate }}
+      </p>
+    </div>
+
+    <!-- ✅ النموذج -->
+    <form
+      id="contact-form"
+      action="https://formspree.io/f/xanbbdab"
+      method="POST"
+      class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-right animate-fade-in"
+    >
+      <!-- الاسم -->
+      <div class="sm:col-span-2" [animateOnView]="'animate-fade-in-up'">
+        <label
+          class="block mb-1 text-sm font-medium text-[var(--color-text-main)]"
+        >
+          {{ "CONTACT_PAGE.FORM.NAME" | translate }}
+          <span class="text-[var(--color-error)]">*</span>
+        </label>
+        <input
+          type="text"
+          name="name"
+          required
+          [placeholder]="'CONTACT_PAGE.FORM.PLACEHOLDER_NAME' | translate"
+          class="w-full p-4 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+        />
+      </div>
+
+      <!-- الإيميل -->
+      <div [animateOnView]="'animate-fade-in-up'">
+        <label
+          class="block mb-1 text-sm font-medium text-[var(--color-text-main)]"
+        >
+          {{ "CONTACT_PAGE.FORM.EMAIL" | translate }}
+          <span class="text-[var(--color-error)]">*</span>
+        </label>
+        <input
+          type="email"
+          name="email"
+          required
+          [placeholder]="'CONTACT_PAGE.FORM.PLACEHOLDER_EMAIL' | translate"
+          class="w-full p-4 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+        />
+      </div>
+
+      <!-- اسم الشركة (اختياري) -->
+      <div [animateOnView]="'animate-fade-in-up'">
+        <label
+          class="block mb-1 text-sm font-medium text-[var(--color-text-main)]"
+        >
+          {{ "CONTACT_PAGE.FORM.COMPANY" | translate }}
+        </label>
+        <input
+          type="text"
+          name="company"
+          [placeholder]="'CONTACT_PAGE.FORM.PLACEHOLDER_COMPANY' | translate"
+          class="w-full p-4 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+        />
+      </div>
+
+      <!-- الرسالة -->
+      <div class="sm:col-span-2" [animateOnView]="'animate-fade-in-up'">
+        <label
+          class="block mb-1 text-sm font-medium text-[var(--color-text-main)]"
+        >
+          {{ "CONTACT_PAGE.FORM.MESSAGE" | translate }}
+          <span class="text-[var(--color-error)]">*</span>
+        </label>
+        <textarea
+          name="message"
+          rows="6"
+          required
+          [placeholder]="'CONTACT_PAGE.FORM.PLACEHOLDER_MESSAGE' | translate"
+          class="w-full p-4 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+        ></textarea>
+      </div>
+
+      <!-- زر الإرسال -->
+      <div class="sm:col-span-2" [animateOnView]="'animate-fade-in-up'">
+        <button
+          id="contact-submit"
+          type="submit"
+          class="flex items-center justify-center gap-3 w-full px-6 py-3 bg-[var(--color-primary)] text-white font-semibold rounded-full shadow-lg transition-all duration-300 hover:bg-[var(--color-primary-hover)] dark:hover:text-black"
+        >
+          <span
+            class="loader hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
+          ></span>
+          <span class="submit-text"
+            ><i class="fas fa-paper-plane"></i>
+            {{ "CONTACT_PAGE.FORM.BUTTON" | translate }}</span
+          >
+        </button>
+      </div>
+    </form>
+
+    <!-- ✅ Toast -->
+    <div
+      id="contact-toast"
+      class="custom-toast hidden text-sm sm:text-base"
+      role="alert"
+    >
+      {{ "CONTACT_PAGE.TOAST.SUCCESS" | translate }}
+    </div>
+
+    <!-- ✅ وسائل التواصل -->
+    <div class="text-center" [animateOnView]="'animate-fade-in-up'">
+      <h3 class="text-xl font-bold mb-4 text-[var(--color-text-main)]">
+        {{ "CONTACT_PAGE.CONNECT_WITH_US" | translate }}
+      </h3>
+      <div
+        class="flex justify-center gap-6 text-[var(--color-primary)] text-2xl"
+      >
+        <a
+          href="https://wa.me/201117484073"
+          target="_blank"
+          aria-label="WhatsApp"
+          class="hover:scale-110 transition"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          aria-label="Facebook"
+          class="hover:scale-110 transition"
+        >
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          aria-label="Instagram"
+          class="hover:scale-110 transition"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="mailto:ahmed.hashim.front@gmail.com"
+          aria-label="Email"
+          class="hover:scale-110 transition"
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ahmedhashim-frontend"
+          target="_blank"
+          aria-label="LinkedIn"
+          class="hover:scale-110 transition"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- ✅ ساعات العمل -->
+    <div class="text-center text-[var(--color-text-secondary)] text-sm mt-6">
+      {{ "CONTACT_PAGE.WORK_HOURS" | translate }}: 9AM - 6PM (Sun–Thu)
+    </div>
+
+    <!-- ✅ الخريطة -->
+    <div class="mt-10 rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
+      <iframe
+        class="w-full h-72"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.911452102127!2d31.3260636!3d30.1125465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583dbe8f18d3c3%3A0xcbdc18734a017452!2z2KfZhNio2K_Yp9mF2Yog2KfZhNmF2YjZhdmK2Kk!5e0!3m2!1sen!2seg!4v1682456789123"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- ديكور -->
+  <div
+    class="absolute bottom-0 -left-20 w-60 h-60 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-pulse"
+  ></div>
+</section>

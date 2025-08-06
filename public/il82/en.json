@@ -1,0 +1,411 @@
+{
+  "HOME": "Home",
+  "ABOUT": "About Us",
+  "OURPRODUCT": "Our Products",
+  "PROJECTS_": "Projects",
+  "CONTACT": "Contact Us",
+    "FAQ": "FAQ"
+,
+  "SITE_NAME_LINE1": "Misr",
+  "SITE_NAME_LINE2": "Investment Co.",
+
+  "HOME_SECTION": {
+    "TITLE": "Misr Gypsum Company",
+    "DESCRIPTION": "Misr Gypsum Company is a trusted leader in the Egyptian market, offering high-performance gypsum solutions tailored to meet the demands of modern construction. With over a decade of experience, we pride ourselves on our ability to blend innovation with consistency, delivering products that exceed industry standards. Our expert team collaborates closely with clients and partners to ensure that every project is executed with precision, professionalism, and a deep understanding of quality. From residential to large-scale commercial developments, Misr Gypsum is the reliable partner you can count on for excellence and long-term success.",
+    "CONTACT_US": "Contact Us",
+    "LEARN_MORE": "Explore Our Products"
+  },
+
+  "ABOUT_SECTION": {
+    "TITLE_MAIN": "About Our Company",
+    "SHORT_DESC": "For over 12 years, Misr Industrial Supplies has built a solid reputation as a trusted partner in the construction and industrial sectors. Backed by deep expertise and a dedicated team, we've successfully served more than 50 clients and delivered over 100 projects with precision and quality. Our 98%+ satisfaction rate reflects our unwavering commitment to excellence, innovation, and delivering fully integrated supply solutions that meet international standards.",
+    "LEARN_MORE": "Learn More",
+    "SHOW_LESS": "Show Less",
+    "YEARS_EXPERIENCE": "Years of Experience",
+    "CLIENTS": "Clients",
+    "PROJECTS": "Completed Projects",
+    "SATISFACTION": "Satisfaction Rate",
+    "CTA_CONTACT_US": "Contact Us Now"
+  },
+  "PRODUCTS_SECTION": {
+    "TITLE_MAIN": "Our Products",
+    "DESCRIPTION": "We offer a wide range of high-quality products that meet your project needs from construction to finishing.",
+    "CATEGORIES": {
+      "CEILINGS": "Ceilings",
+      "CEMENT": "Cement",
+      "INSULATION": "Insulation",
+      "MARBLE": "Marble",
+      "GYPSUM": "Gypsum",
+      "ALUMINUM": "Aluminum"
+    },
+    "CTA": "View All Products"
+  },
+  "BRANCHES_SECTION": {
+    "TITLE_MAIN": "Our Branches",
+    "BRANCH_1": "Maadi Branch – Nasr Street",
+    "BRANCH_2": "Nasr City Branch – Makram Ebeid Street",
+    "BRANCH_3": "Heliopolis Branch – El Hegaz Street",
+    "BRANCH_4": "Mohandessin Branch – Gameat El Dowal Street",
+    "BRANCH_5": "Tagamoa Branch – 90th Street",
+    "BRANCH_6": "October Branch – Al Hosary",
+    "BRANCH_7": "Haram Branch – Talbiya",
+    "BRANCH_8": "Shubra Branch – Sahel"
+  },
+  "PARTNERS_SECTION": {
+    "TITLE_MAIN": "Our Partners in Success",
+    "SUBTITLE": "Our strong partnerships extend to the largest gypsum companies in the Arab world",
+    "CENTER": "Egypt",
+    "PARTNERS": {
+      "BUILD_TECH": "Al-Amal Company",
+      "ADVANCE_GYPSUM": "Al-Noor International",
+      "MISR_ALUMINUM": "Arab Technology",
+      "GREEN_PANEL": "Business Line",
+      "ULTRA_CHEM": "International Gypsum",
+      "NOVA_CEMENT": "Green Board"
+    }
+  },
+  "FOOTER": {
+    "COMPANY_NAME": "Misr Gypsum Company",
+    "DESCRIPTION": "A leading company in gypsum solutions and modern finishing with years of experience.",
+    "NAVIGATION": "Quick Links",
+    "FOLLOW_US": "Follow us",
+    "CONTACT_US": "Contact Us",
+    "ADDRESS": "El-Nasr Street, Maadi, Cairo",
+    "COPYRIGHT": "All rights reserved to Misr Gypsum Company",
+    "MORE": "More Info",
+    "MORE_DESC": "Check our latest projects or learn more about our services.",
+    "MORE_LINK": "Learn more"
+  },
+  "NAV": {
+    "ABOUT": "About Us",
+    "CONTACT": "Contact Us",
+    "FAQ": "FAQ",
+    "TERMS": "Terms & Conditions"
+  },
+  "PROJECT": {
+    "HERO": {
+      "TITLE": "Our Projects Reflect the Quality of Our Products",
+      "DESCRIPTION": "Every project we delivered relied on our durable and modern products. Explore the materials that made it all possible.",
+      "BUTTON": "Explore the products we used"
+    }
+  },
+  "PRODUCT": {
+    "SECTION_TITLE": "Browse Projects by Category",
+    "SECTION_SUBTITLE": "Explore projects by product type and see their applications in the Egyptian and global market.",
+
+    "CATEGORY": {
+      "ALL": "All",
+      "GYPSUM": "Gypsum",
+      "BOARDS": "Boards",
+      "FINISHING": "Finishing"
+    }
+  },
+  "PROJECTS": {
+    "FEATURED_TITLE": "Featured Projects",
+    "GYPSUM_1": {
+      "TITLE": "Elite Palace – Luxury Gypsum Decorations",
+      "DESCRIPTION": "Manual classical gypsum work inside a private palace in Rehab, using custom molds and detailed ornaments.",
+      "TYPE": "Interior Decorations",
+      "DURATION": "3 months",
+      "LOCATION": "Rehab, New Cairo",
+      "BUDGET": "EGP 450,000",
+      "CHALLENGE": "Achieving a balance between luxury and fine details while maintaining execution speed.",
+      "SOLUTION": "Using custom gypsum molds and precise manual execution within record time.",
+      "FEEDBACK": "The client praised the execution quality and attention to detail.",
+      "TECHNOLOGIES": [
+        "Custom Gypsum Molds",
+        "LED Lighting",
+        "Moisture-Resistant Paint"
+      ]
+    },
+    "GYPSUM_2": {
+      "TITLE": "Elite Villa – Modern Ceiling with Hidden Lights",
+      "DESCRIPTION": "Modern ceiling design with hidden LED lights to create a warm ambiance.",
+      "TYPE": "Suspended Ceilings",
+      "DURATION": "6 weeks",
+      "LOCATION": "Sheikh Zayed",
+      "BUDGET": "EGP 120,000",
+      "CHALLENGE": "Integrating lighting within the gypsum work without visible gaps or flaws.",
+      "SOLUTION": "Using powder gypsum with integrated lighting profiles.",
+      "FEEDBACK": "The ambiance completely changed after implementation.",
+      "TECHNOLOGIES": ["Gypsum Board", "LED Lighting", "Hidden Profiles"]
+    },
+    "BOARDS_1": {
+      "TITLE": "Office Building – Fire-Resistant Gypsum Partitions",
+      "DESCRIPTION": "Installation of internal partitions using high fire-resistant gypsum boards to secure the workplace.",
+      "TYPE": "Fire-Resistant Boards",
+      "DURATION": "45 days",
+      "LOCATION": "Downtown",
+      "BUDGET": "EGP 250,000",
+      "CHALLENGE": "Providing thermal and acoustic insulation along with fire resistance.",
+      "SOLUTION": "Using double-layered boards with internal rock wool filling.",
+      "FEEDBACK": "The outcome exceeded expectations in terms of comfort and safety.",
+      "TECHNOLOGIES": ["Fire-Resistant Boards", "Rockwool", "Steel Framing"]
+    },
+    "BOARDS_2": {
+      "TITLE": "Co-Working Spaces – Flexible Layout System",
+      "DESCRIPTION": "Removable walls were implemented to provide a dynamic working environment.",
+      "TYPE": "Flexible Gypsum Partitions",
+      "DURATION": "30 days",
+      "LOCATION": "Fifth Settlement",
+      "BUDGET": "EGP 180,000",
+      "CHALLENGE": "Enabling layout reconfiguration based on changing needs.",
+      "SOLUTION": "Designing modular units that are easy to dismantle and rearrange.",
+      "FEEDBACK": "We can now adapt office layout to different projects easily. Excellent!",
+      "TECHNOLOGIES": [
+        "Modular Partitions",
+        "Light Steel Framing",
+        "Magnetic Panels"
+      ]
+    },
+    "FINISHING_1": {
+      "TITLE": "European Villa – Full Interior Finishing",
+      "DESCRIPTION": "Full interior finishing based on European standards in a New Cairo villa.",
+      "TYPE": "Villa Finishing",
+      "DURATION": "4 months",
+      "LOCATION": "First Settlement",
+      "BUDGET": "EGP 600,000",
+      "CHALLENGE": "Blending European design with local context without mismatch.",
+      "SOLUTION": "Selecting high-quality local materials inspired by European style.",
+      "FEEDBACK": "Feels like a home in Paris now. Thank you!",
+      "TECHNOLOGIES": ["Stucco", "Imported Tiles", "False Ceilings"]
+    },
+    "FINISHING_2": {
+      "TITLE": "Hotel Finishing – VIP Suites & Rooms",
+      "DESCRIPTION": "High-end hotel rooms finished with moisture and mold resistant materials.",
+      "TYPE": "Hotel Finishing",
+      "DURATION": "60 days",
+      "LOCATION": "Zamalek",
+      "BUDGET": "EGP 720,000",
+      "CHALLENGE": "Achieving international hotel quality in record time.",
+      "SOLUTION": "Coordinated parallel work across multiple teams to reduce time.",
+      "FEEDBACK": "Rooms were ready ahead of schedule and met international standards.",
+      "TECHNOLOGIES": [
+        "Moisture Resistant Paint",
+        "Soundproof Panels",
+        "PVC Flooring"
+      ]
+    }
+  },
+  "DEMO_PROJECT": {
+    "TITLE": "Demo Project",
+    "MESSAGE": "This project showcases design and execution skills only, and does not represent a real live version."
+  },
+
+  "PROJECTSPAGes": {
+    "HOW_IT_WORKS": {
+      "TITLE": "Why Choose Misr Gypsum Company?",
+      "SUBTITLE": "We offer the perfect blend of experience, quality, and precision in execution.",
+      "STEP1": {
+        "TITLE": "Over 10 Years of Experience",
+        "DESCRIPTION": "We have a proven track record in executing residential, commercial, and industrial projects."
+      },
+      "STEP2": {
+        "TITLE": "High-Quality Products",
+        "DESCRIPTION": "We use the best materials and modern technologies to ensure outstanding, long-lasting results."
+      },
+      "STEP3": {
+        "TITLE": "Professional Team",
+        "DESCRIPTION": "Our team includes a select group of highly trained engineers and technicians."
+      },
+      "STEP4": {
+        "TITLE": "Commitment to Deadlines and Precision",
+        "DESCRIPTION": "We always strive to deliver projects on time with quality that exceeds expectations."
+      }
+    }
+  },
+
+  "PRODUCTS_PAGE": {
+    "TITLE": "Our Products",
+    "SUBTITLE": "We offer a wide range of high-quality products serving the construction and supply sector professionally.",
+    "FILTERS": {
+      "ALL": "All",
+      "GYPSUM": "Gypsum",
+      "CEILINGS": "Ceilings",
+      "FINISHING": "Finishing",
+      "INSULATION": "Insulation",
+      "ALUMINUM": "Aluminum",
+      "MARBLE": "Marble",
+      "CEMENT": "Cement"
+    },
+    "PRODUCTS": {
+      "PRODUCT1": {
+        "TITLE": "Moisture-Resistant Gypsum Boards",
+        "DESCRIPTION": "Perfect for bathrooms and kitchens, offering high moisture resistance and easy installation."
+      },
+      "PRODUCT2": {
+        "TITLE": "Decorative Suspended Ceilings",
+        "DESCRIPTION": "Elegant ceiling designs that enhance aesthetics and conceal wires and suspended systems."
+      },
+      "PRODUCT3": {
+        "TITLE": "Interior Finishing Putty",
+        "DESCRIPTION": "Provides smooth walls and is used before painting to achieve the best results."
+      },
+      "PRODUCT4": {
+        "TITLE": "Thermal and Acoustic Insulation Boards",
+        "DESCRIPTION": "Enhance energy efficiency and reduce noise using high-performance insulation materials."
+      },
+      "PRODUCT5": {
+        "TITLE": "Aluminum Profiles for Windows & Doors",
+        "DESCRIPTION": "Modern, durable designs available in various colors and sizes."
+      },
+      "PRODUCT6": {
+        "TITLE": "Synthetic Marble for Walls and Floors",
+        "DESCRIPTION": "Scratch-resistant and easy to clean, ideal for elegant finishes."
+      },
+      "PRODUCT7": {
+        "TITLE": "Sulfate-Resistant Cement",
+        "DESCRIPTION": "Ideal for infrastructure and aggressive soil areas."
+      },
+      "PRODUCT8": {
+        "TITLE": "Decorative Gypsum for Columns and Molding",
+        "DESCRIPTION": "Artistic designs to add luxury to interior decorations."
+      },
+      "PRODUCT9": {
+        "TITLE": "Standard Gypsum Boards",
+        "DESCRIPTION": "Cost-effective solution for walls and ceilings."
+      }
+    },
+    "FEATURES_TITLE": "Why Choose Our Products?",
+    "FEATURES": [
+      "Compliant with quality standards",
+      "Moisture and fire resistant",
+      "Easy to install and maintain",
+      "Dedicated technical support"
+    ],
+    "CTA": {
+      "TITLE": "Looking for top-quality materials for your project?",
+      "BUTTON": "Message me on WhatsApp"
+    },
+    "CERTIFICATIONS": {
+      "TITLE": "Certifications & Quality Standards",
+      "DESCRIPTION": "All our products are certified with international quality standards and are subject to strict controls to ensure top-level performance and reliability.",
+      "ISO": "ISO Certified",
+      "CE": "CE Marked – European Standards",
+      "QUALITY": "Approved by the Egyptian Organization for Standards"
+    },
+    "STATS": {
+      "PRODUCTS": "Available Products",
+      "PROJECTS": "Executed Projects",
+      "SATISFACTION": "Customer Satisfaction",
+      "CERTIFICATES": "Quality Certificates"
+    }
+  },
+  "ABOUT_PAGE": {
+    "TITLE": "About Us",
+    "INTRO": "Misr Gypsum Company is a leading provider of building materials and supplies, offering innovative and customized solutions tailored to meet the diverse needs of the local market.",
+
+    "FEATURES": {
+      "QUALITY": {
+        "TITLE": "Unmatched Quality",
+        "TEXT": "We use the latest technologies and locally and globally approved materials."
+      },
+      "SUPPORT": {
+        "TITLE": "Full Commitment",
+        "TEXT": "We adhere to deadlines, standards, and customer satisfaction at every step."
+      },
+      "SOLUTIONS": {
+        "TITLE": "Trusted Experience",
+        "TEXT": "Over 10 years of achievements in residential, commercial, and industrial projects."
+      }
+    },
+
+    "VISION": {
+      "TITLE": "Our Vision",
+      "TEXT": "To be the number one choice in the Egyptian market for supplying and implementing the best gypsum and construction products."
+    },
+
+    "MISSION": {
+      "TITLE": "Our Mission",
+      "TEXT": "To deliver world-class products and services at competitive prices, backed by a professional and passionate team."
+    },
+
+    "STATS": {
+      "YEARS": "Years of Experience",
+      "CLIENTS": "Trusted Clients",
+      "PROJECTS": "Completed Projects",
+      "SATISFACTION": "Customer Satisfaction"
+    },
+
+    "CTA": {
+      "BUTTON": "Contact Us Now"
+    }
+  },
+  "CONTACT_PAGE": {
+    "TITLE": "Contact Us",
+    "SUBTITLE": "We're here to answer all your inquiries or suggestions.",
+
+    "FORM": {
+      "NAME": "Full Name",
+      "EMAIL": "Email Address",
+      "COMPANY": "Company Name (optional)",
+      "MESSAGE": "Your Message",
+      "BUTTON": "Send Message",
+
+      "PLACEHOLDER_NAME": "Enter your full name",
+      "PLACEHOLDER_EMAIL": "example@email.com",
+      "PLACEHOLDER_COMPANY": "Your company or organization name",
+      "PLACEHOLDER_MESSAGE": "Type your message here..."
+    },
+
+    "TOAST": {
+      "SUCCESS": "✅ Your message has been sent successfully. Thank you for contacting us!"
+    },
+
+    "CONNECT_WITH_US": "Connect with us on social platforms",
+    "WORK_HOURS": "Working Hours"
+  },
+"FAQSECTION": {
+  "TITLE": "Frequently Asked Questions",
+  "SUBTITLE": "Here we answer the most common questions clients have before requesting our service.",
+
+  "SHOW_ALL": "Show all questions",
+  "HIDE_ALL": "Hide all questions",
+
+  "QUESTIONS": {
+    "SERVICES": "What types of services do you offer?",
+    "PARTIAL": "Do you provide full finishing or only partial?",
+    "CUSTOM_DESIGN": "Can I request a custom design?",
+    "DURATION": "What is the average project duration?",
+    "START": "Can the work start immediately after agreement?",
+    "ESTIMATE": "Can I know the cost before starting?",
+    "PAYMENT_METHODS": "What payment methods are accepted?",
+    "DOWNPAYMENT": "Is there a down payment?",
+    "WARRANTY": "Do you offer warranty for your work?",
+    "CLIENT_MATERIALS": "Do you use materials chosen by the client?"
+  },
+
+  "ANSWERS": {
+    "SERVICES": "We offer all general contracting services, from excavation and construction to interior and exterior finishing.",
+    "PARTIAL": "Yes, we provide both full and partial finishing based on client needs.",
+    "CUSTOM_DESIGN": "Absolutely. We implement your vision and collaborate with professional engineers.",
+    "DURATION": "It depends on the project size, but we always stick to the agreed schedule.",
+    "START": "Usually yes. After site inspection and requirement clarification, we set an accurate start date.",
+    "ESTIMATE": "We provide a free inspection and detailed cost estimate before signing.",
+    "PAYMENT_METHODS": "We accept cash, bank transfer, and electronic payment.",
+    "DOWNPAYMENT": "Yes, a percentage is paid in advance to reserve the schedule and begin preparations.",
+    "WARRANTY": "All work includes a written warranty depending on the service type (from 6 months to 3 years).",
+    "CLIENT_MATERIALS": "Yes, the client may choose the materials, or we can supply them if preferred."
+  }
+}
+,
+  "TESTIMONIALS": {
+    "TITLE": "What Our Clients Say",
+    "SUBTITLE": "Some voices from real clients we proudly worked with",
+    "ITEM_1": {
+      "NAME": "Ahmed Ali",
+      "TITLE": "Apartment Owner – New Cairo",
+      "FEEDBACK": "The company exceeded my expectations with their attention to detail. Thanks to the whole team!"
+    },
+    "ITEM_2": {
+      "NAME": "Naglaa Mostafa",
+      "TITLE": "Interior Designer",
+      "FEEDBACK": "Great collaboration and very professional. I’ll definitely work with them again!"
+    },
+    "ITEM_3": {
+      "NAME": "Ahmed Badr",
+      "TITLE": "Villa Owner – October",
+      "FEEDBACK": "They delivered exactly what I wanted, on time and with excellent quality."
+    }
+  }
+}

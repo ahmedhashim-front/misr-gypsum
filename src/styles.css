@@ -1,0 +1,298 @@
+/* === 1. استيراد الأدوات والمكتبات === */
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+/* === 2. تثبيت الاتجاه العام لمنع مشاكل Flowbite === */
+html[dir="rtl"] {
+  direction: rtl !important;
+}
+html[dir="ltr"] {
+  direction: ltr !important;
+}
+
+/* === 3. متغيرات الثيم (Light Theme) === */
+:root {
+  --color-primary: #0051d2;
+  --color-primary-hover: #003fa8;
+
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-section: #eaf1fc;
+
+  --color-text-main: #333333;
+  --color-text-secondary: #666666;
+
+  --color-accent: #007bff;
+  --color-border: #eeeeee;
+
+  --color-success: #28a745;
+  --color-error: #dc3545;
+}
+
+/* === 4. دارك مود === */
+[data-theme="dark"],
+.dark {
+  --color-primary: #3a7bff;
+  --color-primary-hover: #255ccc;
+
+  --color-bg: #121212;
+  --color-bg-secondary: #1e1e1e;
+  --color-bg-section: #1f2a3a;
+
+  --color-text-main: #f0f0f0;
+  --color-text-secondary: #cccccc;
+
+  --color-accent: #4dabf7;
+  --color-border: #2c2c2c;
+
+  --color-success: #4ade80;
+  --color-error: #f87171;
+}
+
+/* === 5. العناصر الأساسية === */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+}
+
+/* أزرار */
+button {
+  background-color: var(--color-primary);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* كروت */
+.card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+}
+.card-header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* === 6. أنيميشن عامة === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-slide-in {
+  animation: slideIn 0.7s ease-in-out forwards;
+}
+
+/* === 7. قص صورة الهيرو – ثابت من الشمال === */
+.custom-clip-image {
+  position: relative;
+  clip-path: polygon(0 2%, 100% 0%, 55% 100%, 0% 100%);
+  transition: all 0.4s ease;
+}
+
+/* تأثير Overlay على الصورة */
+.custom-clip-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top right,
+    rgba(0, 81, 210, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 1;
+}
+
+/* === 8. Owl Carousel - شركاء النجاح === */
+.partner-carousel .owl-stage-outer {
+  padding: 10px 0;
+}
+.partner-carousel .owl-item {
+  transition: transform 0.3s ease;
+}
+.partner-carousel .owl-item:hover {
+  transform: scale(1.05);
+}
+.partner-carousel .card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+}
+
+/* === 9. Toasts === */
+.custom-toast {
+  z-index: 9999 !important;
+  position: fixed !important;
+  top: 30px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  padding: 1.2rem 1.5rem !important;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+  border-left: 5px solid #22d3ee !important;
+  max-width: 90vw !important;
+  width: fit-content !important;
+  text-align: start !important;
+}
+
+body.modal-open,
+html.modal-open {
+  overflow: hidden !important;
+  height: 100% !important;
+}
+
+/* === 10. مركز مصر === */
+.center-circle {
+  position: relative;
+  background: linear-gradient(to bottom right, var(--color-primary), #2563eb);
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 1.5rem 2.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 40px rgba(0, 81, 210, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: pulse-glow 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.pulse-circle {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  background: radial-gradient(
+    circle,
+    rgba(0, 81, 210, 0.3) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse-light 4s ease-in-out infinite;
+}
+
+.ripple-circle {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 0 rgba(0, 81, 210, 0.5);
+  animation: ripple-wave 3s ease-out infinite;
+  z-index: -1;
+}
+
+.rotating-circle {
+  width: 500px;
+  height: 500px;
+  border: 2px dashed var(--color-primary);
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: spin-slow 20s linear infinite;
+}
+
+.partner-badge {
+  background-color: white;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  z-index: 5;
+}
+.partner-badge:hover {
+  transform: scale(1.05);
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.dark .partner-badge {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.dark .partner-badge:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 40px rgba(0, 81, 210, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(0, 81, 210, 0.7);
+  }
+}
+
+@keyframes pulse-light {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes ripple-wave {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.6;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+  }
+}

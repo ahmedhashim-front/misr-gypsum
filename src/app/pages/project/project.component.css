@@ -1,0 +1,34 @@
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 81, 210, 0.3);
+}
+/* لإخفاء سكرول البار الأفقي */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.owl-nav button {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.owl-dot.active span {
+  background-color: var(--color-primary);
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

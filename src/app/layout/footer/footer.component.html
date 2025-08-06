@@ -1,0 +1,143 @@
+<footer
+  class="bg-[var(--color-bg-section)] text-[var(--color-text-main)] border-t border-[var(--color-border)] pt-20 pb-10"
+  [animateOnView]="'animate-fade-in-up'"
+>
+  <div class="container mx-auto px-6 max-w-7xl">
+    <!-- الشبكة الأساسية -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-14">
+      <!-- الشعار والوصف -->
+      <div>
+        <h2 class="text-2xl font-bold text-[var(--color-primary)] mb-4">
+          {{ "FOOTER.COMPANY_NAME" | translate }}
+        </h2>
+        <p class="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+          {{ "FOOTER.DESCRIPTION" | translate }}
+        </p>
+        <div class="mt-6 flex gap-3">
+          <a
+            class="w-9 h-9 flex items-center justify-center rounded-full bg-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white transition"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook-f text-sm"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ahmedhashim-frontend"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-9 h-9 flex items-center justify-center rounded-full bg-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white transition"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in text-sm"></i>
+          </a>
+
+          <a
+            href="https://wa.me/201117484073"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-9 h-9 flex items-center justify-center rounded-full bg-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white transition"
+            aria-label="WhatsApp"
+          >
+            <i class="fab fa-whatsapp text-sm"></i>
+          </a>
+
+          <a
+            href="mailto:ahmed.hashim.front@gmail.com"
+            class="w-9 h-9 flex items-center justify-center rounded-full bg-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white transition"
+            aria-label="Email"
+          >
+            <i class="fas fa-envelope text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- روابط -->
+      <div>
+        <h3
+          class="text-base font-semibold mb-4 uppercase tracking-wide text-[var(--color-primary)]"
+        >
+          {{ "FOOTER.NAVIGATION" | translate }}
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a
+              routerLink="/about"
+              class="hover:text-[var(--color-primary)] transition cursor-pointer"
+              >{{ "NAV.ABOUT" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/contact"
+              class="hover:text-[var(--color-primary)] transition cursor-pointer"
+              >{{ "NAV.CONTACT" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/faq"
+              class="hover:text-[var(--color-primary)] transition cursor-pointer"
+              >{{ "NAV.FAQ" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/contact"
+              class="hover:text-[var(--color-primary)] transition cursor-pointer"
+              >{{ "NAV.TERMS" | translate }}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- تواصل -->
+      <div>
+        <h3
+          class="text-base font-semibold mb-4 uppercase tracking-wide text-[var(--color-primary)]"
+        >
+          {{ "FOOTER.CONTACT_US" | translate }}
+        </h3>
+        <ul class="space-y-3 text-sm text-[var(--color-text-secondary)]">
+          <li class="flex items-start gap-2">
+            <i
+              class="fas fa-map-marker-alt mt-1 text-[var(--color-primary)]"
+            ></i>
+            <span>{{ "FOOTER.ADDRESS" | translate }}</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fas fa-phone-alt mt-1 text-[var(--color-primary)]"></i>
+            <span>+20 123 456 789</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fas fa-envelope mt-1 text-[var(--color-primary)]"></i>
+            <span>info&#64;example.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- الاشتراك أو شعار إضافي -->
+      <div>
+        <h3
+          class="text-base font-semibold mb-4 uppercase tracking-wide text-[var(--color-primary)]"
+        >
+          {{ "FOOTER.MORE" | translate }}
+        </h3>
+        <p class="text-sm text-[var(--color-text-secondary)] mb-4">
+          {{ "FOOTER.MORE_DESC" | translate }}
+        </p>
+        <a
+          routerLink="/about"
+          class="inline-block mt-2 text-sm font-medium text-[var(--color-primary)] hover:underline"
+        >
+          {{ "FOOTER.MORE_LINK" | translate }}
+        </a>
+      </div>
+    </div>
+
+    <!-- الحقوق -->
+    <div
+      class="text-center border-t border-[var(--color-border)] pt-6 text-xs text-[var(--color-text-secondary)]"
+    >
+      © {{ currentYear }} {{ "FOOTER.COPYRIGHT" | translate }}
+    </div>
+  </div>
+</footer>
