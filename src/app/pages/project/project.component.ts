@@ -11,8 +11,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { AnimateOnViewDirective } from '../../shared/directive/animate-on-view.directive';
 import { ProjectdetailesComponent } from '../projectdetailes/projectdetailes.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { routes } from '../../app.routes';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -22,7 +20,6 @@ import { RouterLink } from '@angular/router';
     TranslateModule,
     AnimateOnViewDirective,
     ProjectdetailesComponent,
-    CarouselModule,
     RouterLink,
   ],
   templateUrl: './project.component.html',

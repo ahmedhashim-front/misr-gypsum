@@ -3,7 +3,7 @@
 <section
   class="relative bg-[var(--color-bg)] dark:bg-[var(--color-bg)] text-[var(--color-text-main)] dark:text-[var(--color-text-main)] overflow-hidden py-32"
 >
-  <!-- ✅ خلفية Blob SVG -->
+  <!-- خلفية Blob SVG -->
   <svg
     class="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] text-blue-100 dark:text-blue-900 opacity-20 z-0"
     viewBox="0 0 200 200"
@@ -19,7 +19,7 @@
   <div
     class="container mx-auto flex flex-col-reverse md:flex-row items-center px-6 gap-10 relative z-10"
   >
-    <!-- ✅ النص -->
+    <!-- النص -->
     <div class="w-full md:w-1/2 text-center md:text-start z-10 animate-fade-in">
       <h1
         class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 bg-gradient-to-r from-[var(--color-primary)] to-blue-400 dark:to-blue-500 text-transparent bg-clip-text leading-tight"
@@ -32,7 +32,7 @@
         {{ "HOME_SECTION.DESCRIPTION" | translate }}
       </p>
 
-      <!-- ✅ أزرار CTA -->
+      <!-- أزرار CTA -->
       <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
         <a
           routerLink="/contact"
@@ -59,17 +59,17 @@
       </div>
     </div>
 
-    <!-- ✅ الصورة مع القص الثابت من اليسار -->
+    <!-- الصورة -->
     <div class="w-full md:w-1/2 relative animate-slide-in">
       <div
-        class="custom-clip-image overflow-hidden rounded-2xl shadow-xl group"
+        class="aspect-[4/3] overflow-hidden rounded-2xl shadow-xl group custom-clip-image"
       >
         <picture>
-          <source srcset="./img/3.webp" type="image/webp" />
+          <source srcset="/img/3.webp" type="image/webp" />
           <img
-            src="./img/3.jpg"
+            src="/img/3.webp"
             alt="{{ 'HOME_SECTION.TITLE' | translate }} | شركة مصر للتوريدات"
-            class="w-full h-auto object-cover transition duration-500 group-hover:scale-105 group-hover:shadow-2xl"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:shadow-2xl"
             loading="eager"
             fetchpriority="high"
           />
@@ -102,43 +102,14 @@
   <div
     class="container mx-auto px-6 max-w-6xl relative z-10 grid md:grid-cols-2 gap-12 items-center"
   >
-    <!-- 🎥 الفيديو -->
+    <!-- 🎥 الصوره  -->
     <div class="rounded-2xl overflow-hidden shadow-xl relative">
-      <video
-        class="w-full h-auto aspect-video object-cover rounded-2xl transition-opacity duration-700 ease-in-out"
-        autoplay
-        muted
-        playsinline
+      <img
+        class="aspect-[4/3] h-auto w-full object-contain rounded-2xl transition-opacity duration-700 ease-in-out"
         [class.opacity-0]="isTransitioning()"
-        src="/img/team in industry.mp4"
-        (loadstart)="onVideoLoadStart()"
-        (loadeddata)="onVideoLoaded()"
-        (ended)="nextVideo()"
-      >
-        <track
-          kind="captions"
-          srclang="en"
-          label="English"
-          src="/img/team in industry.mp4"
-          default
-        />
-      </video>
-
-      <!-- أزرار التحكم بالفيديو -->
-      <div class="absolute bottom-4 right-4 flex gap-3">
-        <button
-          (click)="prevVideo()"
-          class="w-10 h-10 rounded-full bg-white/80 text-[var(--color-primary)] hover:bg-white shadow-md backdrop-blur flex items-center justify-center"
-        >
-          ‹
-        </button>
-        <button
-          (click)="nextVideo()"
-          class="w-10 h-10 rounded-full bg-white/80 text-[var(--color-primary)] hover:bg-white shadow-md backdrop-blur flex items-center justify-center"
-        >
-          ›
-        </button>
-      </div>
+        src="/img/installation.webp"
+        alt="Team in industry"
+      />
     </div>
 
     <!-- 📝 النص -->
@@ -287,27 +258,27 @@
 
 <section
   id="products-section"
-  class="relative bg-[var(--color-bg)] text-[var(--color-text-main)] overflow-hidden py-32"
+  class="relative bg-[var(--color-bg)] text-[var(--color-text-main)] overflow-hidden py-24 sm:py-32 transition-opacity duration-700 ease-in-out opacity-0"
   [animateOnView]="'animate-fade-in'"
 >
-  <!-- خلفية SVG -->
-  <svg
-    class="absolute top-[-120px] right-[-100px] w-[400px] h-[400px] text-blue-100 dark:text-blue-900 opacity-20 z-0"
-    viewBox="0 0 200 200"
-    xmlns="http://www.w3.org/2000/svg"
+  <!-- ✅ SVG محطوطة بعد المحتوى -->
+  <div
+    class="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] text-blue-100 dark:text-blue-900 opacity-20 z-0 pointer-events-none select-none"
   >
-    <path
-      fill="currentColor"
-      d="M44.8,-51.6C59.1,-39.3,71.8,-19.6,73.1,1.6C74.4,22.8,64.3,45.5,49.2,56.6C34.2,67.7,14.1,67.2,-5.3,69.4C-24.7,71.6,-49.4,76.6,-61.4,65.1C-73.3,53.7,-72.5,25.9,-64.6,4.4C-56.7,-17.2,-41.8,-31.5,-27.7,-44C-13.7,-56.6,0.6,-67.4,15.3,-68.5C30,-69.6,45.5,-61.9,44.8,-51.6Z"
-      transform="translate(100 100)"
-    />
-  </svg>
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill="currentColor"
+        d="M44.8,-51.6C59.1,-39.3,71.8,-19.6,73.1,1.6C74.4,22.8,64.3,45.5,49.2,56.6C34.2,67.7,14.1,67.2,-5.3,69.4C-24.7,71.6,-49.4,76.6,-61.4,65.1C-73.3,53.7,-72.5,25.9,-64.6,4.4C-56.7,-17.2,-41.8,-31.5,-27.7,-44C-13.7,-56.6,0.6,-67.4,15.3,-68.5C30,-69.6,45.5,-61.9,44.8,-51.6Z"
+        transform="translate(100 100)"
+      />
+    </svg>
+  </div>
 
   <div class="container mx-auto px-6 relative z-10">
-    <!-- العنوان -->
-    <div class="text-center max-w-3xl mx-auto mb-20">
+    <!-- ✅ العنوان -->
+    <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
       <h2
-        class="text-4xl sm:text-5xl font-extrabold text-[var(--color-primary)] mb-6 relative"
+        class="text-3xl sm:text-5xl font-extrabold text-[var(--color-primary)] mb-6 relative"
       >
         <span class="inline-block relative">
           {{ "PRODUCTS_SECTION.TITLE_MAIN" | translate }}
@@ -321,24 +292,28 @@
       </p>
     </div>
 
-    <!-- المنتجات -->
+    <!-- ✅ المنتجات -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
       @for ( product of [ { img: 'Ceilings.webp', key: 'CEILINGS', alt:
       'Ceilings Category' }, { img: 'Cement.webp', key: 'CEMENT', alt: 'Cement
       Category' }, { img: 'ai-generated-modern-styled-entryway.webp', key:
-      'INSULATION', alt: 'Insulation Category', }, { img: 'marble.webp', key:
+      'INSULATION', alt: 'Insulation Category' }, { img: 'marble.webp', key:
       'MARBLE', alt: 'Marble Category' }, { img: 'gypsum.webp', key: 'GYPSUM',
       alt: 'Gypsum Category' }, { img: 'aluminum.webp', key: 'ALUMINUM', alt:
       'Aluminum Category' }, ]; track product ) {
       <div
-        class="relative rounded-2xl overflow-hidden group shadow-xl hover:scale-[1.03] transition-transform duration-500 animate-fade-in-up"
+        class="relative rounded-2xl overflow-hidden shadow-xl transition-transform duration-500 hover:scale-[1.03] aspect-[4/3] group"
         [style.animationDelay]="product.key.length * 10 + 'ms'"
       >
         <img
           [src]="'/img/' + product.img"
           [alt]="product.alt"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
-          class="w-full h-44 md:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+          decoding="async"
+          width="400"
+          height="300"
+          fetchpriority="low"
         />
         <div
           class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-300"
@@ -350,7 +325,7 @@
       }
     </div>
 
-    <!-- زر CTA -->
+    <!-- ✅ زر CTA -->
     <div class="mt-16 text-center">
       <a
         routerLink="/productdetailes"
@@ -364,19 +339,26 @@
 
 <section
   id="partners-section"
-  class="relative py-32 px-6 text-center text-[var(--color-text-main)] overflow-hidden"
-  style="
-    background-image: url('/img/partnership.webp');
-    background-size: cover;
-    background-position: center;
-  "
+  class="relative py-32 px-6 text-center text-[var(--color-text-main)] overflow-hidden opacity-0 transition-opacity duration-700 ease-in-out"
+  [animateOnView]="'animate-fade-in'"
 >
-  <!-- طبقة شفافية -->
+  <!-- ✅ صورة الخلفية -->
+  <img
+    src="/img/partnership.webp"
+    alt="Partnership background"
+    class="absolute inset-0 w-full h-full object-cover z-0"
+    loading="lazy"
+    decoding="async"
+    width="1920"
+    height="1080"
+  />
+
+  <!-- ✅ طبقة الشفافية -->
   <div class="absolute inset-0 bg-black/40 dark:bg-black/60 z-0"></div>
 
-  <!-- المحتوى -->
+  <!-- ✅ المحتوى -->
   <div class="relative z-10 max-w-6xl mx-auto">
-    <!-- العنوان والوصف -->
+    <!-- ✅ العنوان -->
     <h2
       class="text-4xl sm:text-5xl font-extrabold mb-4 text-[var(--color-primary)]"
     >
@@ -386,9 +368,9 @@
       {{ "PARTNERS_SECTION.SUBTITLE" | translate }}
     </p>
 
-    <!-- دائرة الشركاء -->
+    <!-- ✅ دائرة الشركاء -->
     <div class="relative w-full max-w-[600px] h-[600px] mx-auto">
-      <!-- الدائرة المركزية -->
+      <!-- ✅ الدائرة المركزية -->
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
       >
@@ -402,16 +384,16 @@
         </div>
       </div>
 
-      <!-- دائرة دوران وهمية -->
+      <!-- ✅ دائرة خارجية متحركة -->
       <div
         class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
       >
         <div
-          class="w-[520px] h-[520px] rounded-full border-2 border-dashed border-[var(--color-primary)] animate-spin-slow"
+          class="w-[520px] h-[520px] rounded-full border-2 border-dashed border-[var(--color-primary)] motion-safe:animate-spin-slow"
         ></div>
       </div>
 
-      <!-- بادجات الشركاء -->
+      <!-- ✅ بادجات الشركاء -->
       <div class="absolute top-0 left-1/2 -translate-x-1/2">
         <div class="partner-badge" aria-label="Ultra Chem">
           {{ "PARTNERS_SECTION.PARTNERS.ULTRA_CHEM" | translate }}
@@ -454,11 +436,12 @@
 <!-- Branches Section -->
 
 <section
-  class="relative py-24 px-6 bg-[var(--color-bg-secondary)] text-[var(--color-text-main)] overflow-hidden"
+  id="branches-section"
+  class="relative py-24 px-6 bg-[var(--color-bg-secondary)] text-[var(--color-text-main)] overflow-hidden opacity-0 transition-opacity duration-700 ease-in-out"
   [animateOnView]="'animate-fade-in-up'"
 >
   <div class="container mx-auto max-w-6xl">
-    <!-- العنوان -->
+    <!-- ✅ العنوان -->
     <div class="text-center mb-16">
       <h2
         class="text-4xl sm:text-5xl font-extrabold text-[var(--color-primary)] relative inline-block"
@@ -470,28 +453,32 @@
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-10">
-      <!-- خريطة جوجل -->
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- ✅ خريطة جوجل -->
       <div
-        class="relative rounded-3xl overflow-hidden shadow-xl border border-[var(--color-border)] bg-white dark:bg-white/5"
-        [animateOnView]="'animate-zoom-in'"
+        class="relative rounded-3xl overflow-hidden shadow-xl border border-[var(--color-border)] bg-white dark:bg-white/5 animate-fade-in-up"
       >
         <div
           class="absolute top-4 left-4 z-10 bg-white dark:bg-[var(--color-bg)] text-[var(--color-primary)] px-4 py-1 rounded-full text-sm font-semibold shadow"
         >
           🗺️ {{ "BRANCHES_SECTION.MAP_LABEL" | translate }}
         </div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.6840367718983!2d31.292349075460397!3d30.016811374931112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583c89e87c8e11%3A0x1dd6c4199b3dd71e!2z2YXYr9mK2YbZitmC2KfYqiDZhNmE2KfZhtmK2Kkg2KfZhNmF2K_ZitmC2Kkg2KfZhNiv2YrYqQ!5e0!3m2!1sen!2seg!4v1721602273264!5m2!1sen!2seg"
-          class="w-full h-[400px]"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+
+        <!-- استخدام aspect ratio لتحسين CLS -->
+        <div class="aspect-[4/3] w-full">
+          <iframe
+            class="w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.6840367718983!2d31.292349075460397!3d30.016811374931112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583c89e87c8e11%3A0x1dd6c4199b3dd71e!2z2YXYr9mK2YbZitmC2KfYqiDZhNmE2KfZhtmK2Kkg2KfZhNmF2K_ZitmC2Kkg2KfZhNiv2YrYqQ!5e0!3m2!1sen!2seg!4v1721602273264!5m2!1sen!2seg"
+            allowfullscreen
+            loading="lazy"
+            decoding="async"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Google Map Location"
+          ></iframe>
+        </div>
       </div>
 
-      <!-- قائمة الفروع -->
+      <!-- ✅ قائمة الفروع -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         @for ( branch of [ 'BRANCHES_SECTION.BRANCH_1',
         'BRANCHES_SECTION.BRANCH_2', 'BRANCHES_SECTION.BRANCH_3',
@@ -499,8 +486,7 @@
         'BRANCHES_SECTION.BRANCH_6', 'BRANCHES_SECTION.BRANCH_7',
         'BRANCHES_SECTION.BRANCH_8' ]; track branch ) {
         <div
-          class="group flex items-start gap-4 p-5 bg-white dark:bg-white/5 border border-[var(--color-border)] rounded-2xl shadow transition-all duration-300 hover:shadow-lg hover:border-[var(--color-primary)]"
-          [animateOnView]="'animate-fade-in-up'"
+          class="group flex items-start gap-4 p-5 bg-white dark:bg-white/5 border border-[var(--color-border)] rounded-2xl shadow transition-all duration-300 hover:shadow-lg hover:border-[var(--color-primary)] animate-fade-in-up"
         >
           <div
             class="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-primary)] text-white shrink-0 transition-transform duration-300 group-hover:scale-110"
