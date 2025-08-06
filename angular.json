@@ -33,24 +33,24 @@
           },
           "configurations": {
             "production": {
-              "outputHashing": "all",
-              "fileReplacements": [
+              "budgets": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "type": "initial",
+                  "maximumWarning": "2MB",
+                  "maximumError": "6MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kB",
+                  "maximumError": "20kB"
                 }
               ],
-              "optimization": true,
-              "sourceMap": false,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -65,44 +65,7 @@
               "buildTarget": "project:build:development"
             }
           },
-          "defaultConfiguration": "development"
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/project/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "sourceMap": false,
-              "optimization": true
-            }
-          },
           "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@angular/ssr-dev-server:dev-server",
-          "options": {
-            "browserTarget": "project:build",
-            "serverTarget": "project:server"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "project:build:production",
-              "serverTarget": "project:server:production"
-            }
-          }
-        },
-        "prerender": {
-          "builder": "@angular/ssr:prerender",
-          "options": {
-            "browserTarget": "project:build:production",
-            "serverTarget": "project:server:production",
-            "routes": ["/"]
-          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
@@ -126,6 +89,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "6c3fd6b6-6a52-4429-9fb0-a553b9df2e57"
   }
 }
