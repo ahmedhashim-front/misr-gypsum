@@ -66,19 +66,16 @@ export class FaqComponent {
       nameKey: 'TESTIMONIALS.ITEM_1.NAME',
       titleKey: 'TESTIMONIALS.ITEM_1.TITLE',
       feedbackKey: 'TESTIMONIALS.ITEM_1.FEEDBACK',
-      avatar: '/assets/testimonials/ahmed.jpg',
     },
     {
       nameKey: 'TESTIMONIALS.ITEM_2.NAME',
       titleKey: 'TESTIMONIALS.ITEM_2.TITLE',
       feedbackKey: 'TESTIMONIALS.ITEM_2.FEEDBACK',
-      avatar: '/assets/testimonials/naglaa.jpg',
     },
     {
       nameKey: 'TESTIMONIALS.ITEM_3.NAME',
       titleKey: 'TESTIMONIALS.ITEM_3.TITLE',
       feedbackKey: 'TESTIMONIALS.ITEM_3.FEEDBACK',
-      avatar: '/assets/testimonials/badr.jpg',
     },
   ];
 }
